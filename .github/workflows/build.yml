@@ -17,6 +17,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set version from tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        run: |
+          $tag = "${{ github.ref_name }}"
+          $ver = $tag -replace '^v',''
+          (Get-Content FeatureTool.csproj -Raw) -replace '<Version>.*?</Version>', "<Version>$ver</Version>" |
+            Set-Content FeatureTool.csproj -NoNewline
+          Write-Host "Version set to $ver"
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
@@ -36,3 +46,17 @@ jobs:
         with:
           name: FeatureTool-${{ matrix.platform }}
           path: publish\
+
+      - name: Zip for release
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        run: Compress-Archive -Path publish\* -DestinationPath FeatureTool-${{ matrix.platform }}.zip
+
+      - name: Create release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: FeatureTool-${{ matrix.platform }}.zip
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

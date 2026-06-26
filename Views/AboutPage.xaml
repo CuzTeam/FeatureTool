@@ -22,7 +22,7 @@
                     <TextBlock Text="FeatureTool"
                                FontSize="20"
                                FontWeight="SemiBold" />
-                    <TextBlock Text="v0.1.0"
+                    <TextBlock x:Name="VersionText"
                                Foreground="{ThemeResource TextFillColorTertiaryBrush}" />
                     <TextBlock Text="基于 ViVe 的 Windows 特性配置图形工具，支持查询、启用/禁用/重置 A/B 特性，重启后生效。"
                                TextWrapping="Wrap"

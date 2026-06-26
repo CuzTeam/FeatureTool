@@ -1,4 +1,5 @@
 using System;
+using FeatureTool.Services;
 using Windows.System;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -10,6 +11,7 @@ namespace FeatureTool.Views
         public AboutPage()
         {
             InitializeComponent();
+            VersionText.Text = "v" + AppInfo.Version;
         }
 
         private async void RepoButton_Click(object sender, RoutedEventArgs e)

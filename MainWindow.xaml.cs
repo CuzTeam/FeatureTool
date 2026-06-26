@@ -1,4 +1,5 @@
 using System.Security.Principal;
+using FeatureTool.Services;
 using FeatureTool.Views;
 using Microsoft.UI;
 using Microsoft.UI.Xaml;
@@ -13,6 +14,8 @@ namespace FeatureTool
         private readonly FeaturePage _featurePage = new();
         private readonly ConfigPage _configPage = new();
         private readonly AboutPage _aboutPage = new();
+
+        public string AppVersion => AppInfo.Version;
 
         public MainWindow()
         {

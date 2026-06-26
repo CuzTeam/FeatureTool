@@ -31,7 +31,7 @@
                 <TextBlock Text="FeatureTool"
                            VerticalAlignment="Center"
                            FontWeight="SemiBold" />
-                <TextBlock Text="v0.1.0"
+                <TextBlock Text="{x:Bind AppVersion, Mode=OneWay}"
                            VerticalAlignment="Center"
                            Foreground="{ThemeResource TextFillColorTertiaryBrush}" />
             </StackPanel>
