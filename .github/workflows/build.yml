@@ -2,9 +2,9 @@ name: build
 
 on:
   push:
-    branches: [master, main]
-  pull_request:
-    branches: [master, main]
+    tags:
+      - 'v*'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
         run: dotnet build FeatureTool.csproj -c ${{ matrix.configuration }} -p:Platform=${{ matrix.platform }} --no-restore
 
       - name: Publish
-        run: dotnet publish FeatureTool.csproj -c ${{ matrix.configuration }} -p:Platform=${{ matrix.platform }} -p:RuntimeIdentifier=win-${{ matrix.platform }} --self-contained false -o publish
+        run: dotnet publish FeatureTool.csproj -c ${{ matrix.configuration }} -p:Platform=${{ matrix.platform }} -p:RuntimeIdentifier=win-${{ matrix.platform }} -p:PublishReadyToRun=false --self-contained false -o publish
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
