@@ -59,10 +59,11 @@
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
 
-  <!-- Publish Properties: framework-dependent，产物散放+zip 分发（WinUI 3 unpackaged 不支持真 single-file） -->
+  <!-- Publish Properties: self-contained，无需用户装 WindowsAppRuntime -->
   <PropertyGroup>
     <PublishReadyToRun>false</PublishReadyToRun>
     <PublishTrimmed>false</PublishTrimmed>
-    <SelfContained>false</SelfContained>
+    <SelfContained>true</SelfContained>
+    <WindowsPackageType>None</WindowsPackageType>
   </PropertyGroup>
 </Project>

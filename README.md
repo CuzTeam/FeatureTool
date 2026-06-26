@@ -23,7 +23,7 @@
 
 前往 [Releases](https://github.com/CuzTeam/FeatureTool/releases) 下载最新版本的 `FeatureTool-x64.zip`，解压后运行 `FeatureTool.exe`（需以管理员身份运行，程序内置 UAC 提权，双击会弹窗确认）。
 
-> 运行需 .NET 8 Desktop Runtime。WinUI 3 unpackaged 应用无法打包成单 exe，故以 zip 分发。
+> 自包含发布（self-contained），无需额外安装 .NET 或 Windows App Runtime。WinUI 3 unpackaged 应用无法打包成单 exe，故以 zip 分发。
 
 ## 从源码构建
 
