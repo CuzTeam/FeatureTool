@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="FeatureTool.Views.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer Padding="16">
+        <StackPanel Spacing="12" MaxWidth="720">
+            <TextBlock Text="关于"
+                       FontSize="28"
+                       FontWeight="SemiBold" />
+
+            <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="16,12">
+                <StackPanel Spacing="6">
+                    <TextBlock Text="FeatureTool"
+                               FontSize="20"
+                               FontWeight="SemiBold" />
+                    <TextBlock Text="v0.1.0"
+                               Foreground="{ThemeResource TextFillColorTertiaryBrush}" />
+                    <TextBlock Text="基于 ViVe 的 Windows 特性配置图形工具，支持查询、启用/禁用/重置 A/B 特性，重启后生效。"
+                               TextWrapping="Wrap"
+                               Margin="0,4,0,0" />
+                </StackPanel>
+            </Border>
+
+            <TextBlock Text="开源仓库"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       Margin="0,12,0,0" />
+
+            <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="16,12">
+                <Button Click="RepoButton_Click"
+                        Padding="0"
+                        BorderThickness="0"
+                        Background="Transparent">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <FontIcon Glyph="&#xE8B7;"
+                                  FontSize="14"
+                                  VerticalAlignment="Center" />
+                        <TextBlock Text="https://github.com/CuzTeam/FeatureTool"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </Border>
+
+            <TextBlock Text="开源协议"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       Margin="0,12,0,0" />
+
+            <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="16,12">
+                <StackPanel Spacing="4">
+                    <TextBlock Text="AGPL-3.0"
+                               FontWeight="SemiBold" />
+                    <TextBlock Text="本程序是自由软件：你可以自由重新发布或修改它，遵循 GNU Affero 通用公共许可证第 3 版（AGPL-3.0）。"
+                               TextWrapping="Wrap"
+                               Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                    <TextBlock Text="ViVe 库由 @thebookisclosed 开发，基于 GPL-3.0 协议，已与 AGPL-3.0 兼容。"
+                               TextWrapping="Wrap"
+                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                               Margin="0,4,0,0" />
+                </StackPanel>
+            </Border>
+
+            <TextBlock Text="致谢"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       Margin="0,12,0,0" />
+
+            <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="16,12">
+                <TextBlock Text="@thebookisclosed - ViVe"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

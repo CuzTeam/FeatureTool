@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FeatureTool (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "FeatureTool (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
